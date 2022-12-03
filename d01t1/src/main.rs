@@ -1,5 +1,5 @@
 fn main() {
-    let mut input = std::fs::read_to_string("inputs.txt").unwrap();
+    let input = std::fs::read_to_string("inputs.txt").unwrap();
     let mut elves = Vec::<usize>::new();
     let mut current_elf = 0;
     for line in input.lines() {
