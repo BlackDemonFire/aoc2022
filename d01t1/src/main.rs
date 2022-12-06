@@ -3,7 +3,7 @@ fn main() {
     let mut elves = Vec::<usize>::new();
     let mut current_elf = 0;
     for line in input.lines() {
-        if line == "" {
+        if line.is_empty() {
             elves.push(current_elf);
             current_elf = 0;
         } else {

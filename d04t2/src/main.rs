@@ -4,8 +4,8 @@ fn main() {
     let input = read_to_string("input.txt").unwrap();
     let result = input
         .lines()
-        .map(|line| line.split_once(",").unwrap())
-        .map(|(a, b)| (a.split_once("-").unwrap(), b.split_once("-").unwrap()))
+        .map(|line| line.split_once(',').unwrap())
+        .map(|(a, b)| (a.split_once('-').unwrap(), b.split_once('-').unwrap()))
         .map(|(a, b)| {
             (
                 (a.0.parse::<usize>().unwrap(), a.1.parse::<usize>().unwrap()),

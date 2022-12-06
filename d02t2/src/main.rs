@@ -4,7 +4,7 @@ fn main() {
     let input = read_to_string("input.txt").unwrap();
     let mut points: u64 = 0;
     for line in input.lines() {
-        let (opponent, me) = line.split_once(" ").unwrap();
+        let (opponent, me) = line.split_once(' ').unwrap();
         // A = Rock = 1
         // B = Paper = 2
         // C = Scissors = 3
@@ -12,9 +12,9 @@ fn main() {
         // Y = Draw = 3
         // Z = Win = 6
         points += match (opponent, me) {
-            ("A","X") => 0 + 3,
-            ("B","X") => 0 + 1,
-            ("C","X") => 0 + 2,
+            ("A","X") => 3,
+            ("B","X") => 1,
+            ("C","X") => 2,
             ("A","Y") => 3 + 1,
             ("B","Y") => 3 + 2,
             ("C","Y") => 3 + 3,

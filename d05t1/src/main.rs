@@ -3,7 +3,7 @@ use std::fs::read_to_string;
 fn main() {
     let input = read_to_string("input.txt").unwrap();
     let (base, actions) = input.split_once("\n\n").unwrap();
-    let cols: [&mut Vec<char>; 9] = [
+    let mut cols: [&mut Vec<char>; 9] = [
         &mut Vec::new(),
         &mut Vec::new(),
         &mut Vec::new(),
@@ -15,10 +15,10 @@ fn main() {
         &mut Vec::new(),
     ];
     for line in base.lines().rev().skip(1) {
-        for col in 0..9 {
-            let char = line.chars().nth((col * 4) + 1).unwrap();
+        for (index, col) in cols.iter_mut().enumerate() {
+            let char = line.chars().nth((index * 4) + 1).unwrap();
             if !char.is_whitespace() {
-                cols[col].push(char);
+                col.push(char);
             }
         }
     }
@@ -32,7 +32,7 @@ fn main() {
         .map(|col| col.pop().unwrap())
         .iter()
         .collect::<String>();
-    println!("{}", result)
+    println!("{}", result);
 }
 
 fn extract_action(line: &str) -> (u8, u8, u8) {

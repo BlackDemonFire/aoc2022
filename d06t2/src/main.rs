@@ -9,7 +9,7 @@ fn main() {
             storage.pop_front();
             if !storage
                 .iter()
-                .any(|c| storage.iter().filter(|d| &c == d).collect::<Vec<_>>().len() > 1)
+                .any(|c| storage.iter().filter(|d| &c == d).count() > 1)
             {
                 println!("{}", index + 1);
                 break;
