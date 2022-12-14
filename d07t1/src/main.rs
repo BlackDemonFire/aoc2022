@@ -45,7 +45,6 @@ fn main() {
                 let size = size_str.parse::<usize>().unwrap();
                 let mut tmp_dir = cwd.clone();
                 for _ in 0..cwd.matches('/').count() {
-                    dbg!(&tmp_dir, &dir_sizes);
                     dir_sizes
                         .iter_mut()
                         .find(|d| d.name == tmp_dir)
